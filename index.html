@@ -1,100 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smr Project</title>
+    <title>Tugas Manajemen PAI | [SUMAR]</title>
     <style>
-        /* Menggunakan Flexbox untuk tata letak Header-Content-Footer */
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e502d 0%, #4a7c59 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
             margin: 0;
-            display: flex; /* Mengaktifkan Flexbox */
-            flex-direction: column; /* Menyusun item secara vertikal */
-            min-height: 100vh; /* Memastikan body mencakup seluruh tinggi viewport */
-        }
-        
-        /* Gaya untuk Pesan Selamat Datang (sekarang untuk Logo) */
-        #welcome-message {
-            display: flex; /* Mengaktifkan Flexbox untuk pemusatan */
-            justify-content: center; /* Memusatkan konten secara horizontal */
-            align-items: center; /* Memusatkan konten secara vertikal */
-            flex-grow: 1; /* Mengambil semua ruang yang tersisa */
-            background-color: #fff; /* Latar belakang putih (perubahan di sini) */
-        }
-        
-        /* Gaya untuk Logo Gambar */
-        #welcome-message img {
-            max-width: 80%; /* Batasi lebar gambar agar tidak terlalu besar */
-            max-height: 80vh; /* Batasi tinggi gambar sesuai viewport */
-            height: auto;
-            border-radius: 15px; /* Sudut membulat untuk estetika (opsional) */
-            /* Menerapkan Animasi Logo */
-            animation: logoPulse 3s infinite alternate; 
+            padding: 20px;
         }
 
-        /* Keyframes untuk Animasi Logo */
-        @keyframes logoPulse {
-            0% {
-                opacity: 0.8; /* Sedikit transparan */
-                transform: scale(0.95); /* Sedikit menyusut */
-            }
-            100% {
-                opacity: 1; /* Penuh/Jelas */
-                transform: scale(1.05); /* Sedikit membesar */
-            }
-        }
-
-        /* Styling untuk Iframe */
-        iframe {
-            display: none; /* Penting: Secara default disembunyikan, akan ditampilkan oleh JavaScript */
+        .container {
+            max-width: 400px;
             width: 100%;
-            flex-grow: 1; 
-            border: none;
-            background: #fff; 
-        }
-        
-        /* Styling untuk Footer */
-        footer {
-            padding: 10px;
             text-align: center;
-            background-color: #f1f1f1; 
-            color: #333; 
-            font-size: 0.9em;
-            flex-shrink: 0; 
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        h1 { font-size: 1.5rem; margin-bottom: 5px; }
+        p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 30px; }
+
+        .link-card {
+            background: white;
+            color: #1e502d;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .link-card:hover {
+            transform: scale(1.05);
+            background: #f0f0f0;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
-    <!-- Elemen Logo Animasi -->
-    <div id="welcome-message">
-        <img src="logo.png" alt="Logo Proyek NAI TEAM">
+
+    <div class="container">
+        <img src="https://via.placeholder.com/100" alt="Foto Profil" class="profile-img">
+        
+        <h1>[SUMAR]</h1>
+        <p>Mahasiswa PAI | Tugas Manajemen Pendidikan PAI</p>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ID_VIDEO_ANDA" allowfullscreen></iframe>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="URL_VIDEO_TIKTOK_ANDA" class="link-card" target="_blank">🎬 Tonton di TikTok</a>
+            <a href="URL_VIDEO_YOUTUBE_ANDA" class="link-card" target="_blank">📺 Tonton di YouTube</a>
+            <a href="https://wa.me/NOMOR_WA_ANDA" class="link-card" target="_blank">💬 Hubungi via WhatsApp</a>
+        </div>
+
+        <div class="footer">
+            #ManajemenPAIIAD #PAIIAD #PembelajaranPAIIAD
+        </div>
     </div>
-    
-    <!-- Iframe asli, diberikan ID dan display: none secara default -->
-    <iframe id="main-iframe" src="https://script.google.com/macros/s/AKfycbwEetfK-a-KIw4gBsY28aFrgSBIUHJkMXPIyHH6VvWJbyDjBKZfS11XsD1eXITq2Fr7Hw/exec" allow="camera"></iframe>
-    
-    <!-- Elemen Footer Baru -->
-    <footer>
-        &copy; Copyright 2025; By, Smr Project
-    </footer>
 
-    <script>
-        // Durasi tampilan pesan selamat datang/logo dalam milidetik (3000ms = 3 detik)
-        const displayDuration = 3000; 
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const welcomeMessage = document.getElementById('welcome-message');
-            const mainIframe = document.getElementById('main-iframe');
-
-            // Gunakan setTimeout untuk menunggu durasi yang ditentukan
-            setTimeout(() => {
-                // 1. Sembunyikan pesan/logo
-                welcomeMessage.style.display = 'none';
-
-                // 2. Tampilkan iframe (tujuan)
-                mainIframe.style.display = 'block';
-            }, displayDuration); // Akan dijalankan setelah 3 detik
-        });
-    </script>
 </body>
 </html>
